@@ -28,7 +28,7 @@
 
 <body>
   <table
-    style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tr style="padding:0px">
       <td style="padding:0px">
         <table
@@ -42,8 +42,7 @@
                 I am a PhD student in computer science at Université Laval. I feel very fortunate to have the opputunity
                 to work with <a href="https://vision.gel.ulaval.ca/~jflalonde/">Prof. Jean-François Lalonde</a> and <a
                   href="https://vision.gel.ulaval.ca/~jflalonde/students/">this amazing lab</a>! My research focuses on
-                high-quality object insertion and lighting estimation in computer vision and graphics, especially with
-                the help of diffusion models.
+                high-quality object insertion, lighting estimation with diffusion models.
               </p>
               <p>
                 Before joining Université Laval, I completed my MEng in Computer Technologies in South China
@@ -55,13 +54,14 @@
               </p>
               <p style="text-align:center">
                 <a href="mailto:zitian.zhang.1@ulaval.ca"> Email</a> &nbsp;/&nbsp;
-                <a href="https://github.com/zzt76">GitHub</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com/citations?user=4RMwQmsAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
-                <a href="https://www.linkedin.com/in/ztzhang76"> LinkedIn </a>
+                <a href="https://github.com/zzt76" target="_blank">GitHub</a> &nbsp;/&nbsp;
+                <a href="https://scholar.google.com/citations?user=4RMwQmsAAAAJ" target="_blank">Google Scholar</a>
+                &nbsp;/&nbsp;
+                <a href="https://www.linkedin.com/in/ztzhang76" target="_blank"> LinkedIn </a>
               </p>
             </td>
             <td style="padding:2.5%;width:20%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/zzt_rect.jpg">
+              <img style="width:100%;max-width:100%" alt="profile photo" src="images/zzt.jpg">
             </td>
           </tr>
         </table>
@@ -72,8 +72,10 @@
             <td style="padding:2.5%;width:100%;vertical-align:middle">
               <h2>Research</h2>
               <p>
-                My research focuses on high-quality object insertion and lighting estimation in computer vision and
-                graphics, especially with the help of diffusion models.
+                My research focuses on high-quality object insertion and lighting estimation, especially with the help
+                of diffusion models. My goal is to enable seamless and realistic object compositing in diverse scenes by
+                developing methods that integrate shading, shadow control, and accurate lighting conditions without
+                requiring extensive paired data or supervised training.
               </p>
             </td>
           </tr>
@@ -86,16 +88,17 @@
           {% for cat in post.categories %}
           {% if cat == 'research' %}
           <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:200px">
+            <td style="padding:2.5%;width:35%;vertical-align:middle;min-width:200px">
               <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
             </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
+            <td style="padding:2.5%;width:65%;vertical-align:middle">
               <h3>{{post.title}}</h3>
               <br>
               {{post.authors}}
 
               <br>
-              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
+              <!-- <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }} -->
+              <em>{{post.venue}}</em>
               <br>
               {% if post.arxiv %}
               <a href="{{post.arxiv}}">arxiv</a> /
