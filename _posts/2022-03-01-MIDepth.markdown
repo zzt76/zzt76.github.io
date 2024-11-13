@@ -11,4 +11,4 @@ paper: https://ieeexplore.ieee.org/document/10398491
 dataset: https://doi.org/10.25440/smu.24992976.v1
 code: https://github.com/ViktorLiang/midepth
 ---
-A indoor RGB-D dataset with multi-illuminations, and a method for consistent depth estimation under changing lighting.
+An indoor RGB-D dataset with multi-illuminations, and a method for consistent depth estimation under changing lighting.
