@@ -2,7 +2,7 @@
 layout: post
 title:  "ZeroComp: Zero-shot Object Compositing from Image Intrinsics via Diffusion"
 date:   2024-11-12 13:56:59 +00:00
-image: /images/zerocomp.jpg
+image: images/zerocomp.jpg
 categories: research
 author: "Zitian Zhang"
 authors: "<strong>Zitian Zhang</strong>, Frédéric Fortier-Chouinard, Mathieu Garon, Anand Bhattad, Jean-François Lalonde"

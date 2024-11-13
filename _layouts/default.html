@@ -70,7 +70,12 @@
           style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Research</h2>
+              <h2>Research</h2> <img style="width:3%;vertical-align:top;" alt="bunny" src="images/bunny.png"></img>
+              <p>
+                <center><img style="width:70%;vertical-align:middle;" alt="hidden_bunny"
+                    src="images/hidden_bunny.png"></img>
+                </center>
+              </p>
               <p>
                 My research focuses on high-quality object insertion and lighting estimation, especially with the help
                 of diffusion models. My goal is to enable seamless and realistic object compositing in diverse scenes by
@@ -98,31 +103,31 @@
 
               <br>
               <!-- <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }} -->
-              <em>{{post.venue}}</em>
+              <em><strong>{{post.venue}}</strong></em>
               <br>
               {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> /
+              <a href="{{post.arxiv}}" target="_blank">arxiv</a> /
               {% endif %}
               {% if post.video %}
-              <a href="{{post.video}}">video</a> /
+              <a href="{{post.video}}" target="_blank">video</a> /
               {% endif %}
               {% if post.code %}
-              <a href="{{post.code}}">code</a> /
+              <a href="{{post.code}}" target="_blank">code</a> /
               {% endif %}
               {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
+              <a href="{{post.poster}}" target="_blank">poster</a> /
               {% endif %}
               {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
+              <a href="{{post.slides}}" target="_blank">slides</a> /
               {% endif %}
               {% if post.website %}
-              <a href="{{post.website}}">website</a> /
+              <a href="{{post.website}}" target="_blank">website</a> /
               {% endif %}
               {% if post.supp %}
-              <a href="{{post.supp}}">supplementary</a> /
+              <a href="{{post.supp}}" target="_blank">supplementary</a> /
               {% endif %}
               {% if post.youtube %}
-              <a href="{{post.youtube}}">youtube</a> /
+              <a href="{{post.youtube}}" target="_blank">youtube</a> /
               {% endif %}
               <p></p>
               {{ post.excerpt }}
@@ -205,6 +210,8 @@
           {% endfor %}
         </table>
 
+        !-->
+
         <br>
         <br>
         <br>
@@ -214,7 +221,7 @@
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
               <h2>Other Projects</h2>
-              <p> These include coursework, side projects and unpublished research work.
+              <p> These include intern projects, and other projects that I have worked on.
               </p>
             </td>
           </tr>
@@ -226,16 +233,22 @@
           {% for cat in post.categories %}
           {% if cat != 'research' and cat != 'Intel' %}
           <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+            <td style="padding:2.5%;width:35%;vertical-align:middle;min-width:120px">
+              {% if post.video %}
+              <video width="100%" controls>
+                <source src={{post.video}} type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              {% else %}
+              <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+              {% endif %}
             </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
+            <td style="padding:2.5%;width:65%;vertical-align:middle">
               <h3>{{post.title}}</h3>
               <br>
               <em>{{post.categories}} {{post.course}}</em>
               <br>
               {{ post.date | date: "%Y-%m-%d" }}
-
               <br>
               {% if post.website %}
               <a href="{{post.website}}">website</a> /
@@ -252,12 +265,12 @@
               {% if post.patent3 %}
               <a href="{{post.patent3}}">patent #3</a> /
               {% endif %}
-              {% if post.video %}
+              <!-- {% if post.video %}
               <a href="{{post.video}}">video</a> /
               {% endif %}
               {% if post.video2 %}
               <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
+              {% endif %} -->
               {% if post.code %}
               <a href="{{post.code}}">code</a> /
               {% endif %}
@@ -274,7 +287,7 @@
           {% endif %}
           {% endfor %}
           {% endfor %}
-        </table> -->
+        </table>
 
         <table
           style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
