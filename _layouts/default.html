@@ -85,7 +85,6 @@
             </td>
           </tr>
         </table>
-
         <table
           style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 
@@ -108,23 +107,29 @@
               {% if post.arxiv %}
               <a href="{{post.arxiv}}" target="_blank">arxiv</a> /
               {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}" target="_blank">video</a> /
+              {% if post.paper %}
+              <a href="{{post.paper}}" target="_blank">paper</a> /
               {% endif %}
               {% if post.code %}
               <a href="{{post.code}}" target="_blank">code</a> /
               {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}" target="_blank">poster</a> /
+              {% if post.dataset %}
+              <a href="{{post.dataset}}" target="_blank">dataset</a> /
               {% endif %}
               {% if post.slides %}
               <a href="{{post.slides}}" target="_blank">slides</a> /
+              {% endif %}
+              {% if post.poster %}
+              <a href="{{post.poster}}" target="_blank">poster</a> /
               {% endif %}
               {% if post.website %}
               <a href="{{post.website}}" target="_blank">website</a> /
               {% endif %}
               {% if post.supp %}
               <a href="{{post.supp}}" target="_blank">supplementary</a> /
+              {% endif %}
+              {% if post.video %}
+              <a href="{{post.video}}" target="_blank">video</a> /
               {% endif %}
               {% if post.youtube %}
               <a href="{{post.youtube}}" target="_blank">youtube</a> /

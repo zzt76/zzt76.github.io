@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Delving into Multi-illumination Monocular Depth Estimation: A New Dataset and Method"
+date:   2022-03-01 00:00:00 +00:00
+image: images/midepth.png
+categories: research
+author: "Zitian Zhang"
+authors: "Yuan Liang, <strong>Zitian Zhang</strong>, Chuhua Xian, Shengfeng He"
+venue: "TMM"
+paper: https://ieeexplore.ieee.org/document/10398491
+dataset: https://doi.org/10.25440/smu.24992976.v1
+code: https://github.com/ViktorLiang/midepth
+---
+A indoor RGB-D dataset with multi-illuminations, and a method for consistent depth estimation under changing lighting.
