@@ -5,7 +5,7 @@ date:   2024-12-02 13:56:59 +00:00
 image: images/spotlight.jpg
 categories: research
 author: "Zitian Zhang"
-authors: "Frédéric Fortier-Chouinard, <strong>Zitian Zhang</strong>, Mathieu Garon, Anand Bhattad, Jean-François Lalonde"
+authors: "Frédéric Fortier-Chouinard, <strong>Zitian Zhang</strong>, Louis-Etienne Messier, Mathieu Garon, Anand Bhattad, Jean-François Lalonde"
 venue: "Arxiv"
 arxiv: https://arxiv.org/abs/2411.18665
 website: https://lvsn.github.io/spotlight/
