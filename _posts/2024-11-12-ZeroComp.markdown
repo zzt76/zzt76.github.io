@@ -6,7 +6,7 @@ image: images/zerocomp.jpg
 categories: research
 author: "Zitian Zhang"
 authors: "<strong>Zitian Zhang</strong>, Frédéric Fortier-Chouinard, Mathieu Garon, Anand Bhattad, Jean-François Lalonde"
-venue: "WACV 2025"
+venue: "WACV 2025 (Oral)"
 arxiv: https://arxiv.org/abs/2308.14737
 website: https://lvsn.github.io/ZeroComp/
 # code: https://github.com/zzt76/ZeroComp
