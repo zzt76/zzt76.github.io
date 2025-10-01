@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Improving the color accuracy of lighting estimation models"
+date:   2025-10-01 13:56:59 +00:00
+image: images/color.png
+categories: research
+author: "Zitian Zhang"
+authors: "<strong>Zitian Zhang</strong>, Joshua Urban Davis, Jeanne Phuong Anh Vu, Jiangtao Kuang, Jean-François Lalonde"
+venue: "CIC33 (Oral)"
+arxiv: https://arxiv.org/abs/2509.18390
+website: https://lvsn.github.io/coloraccuracy/
+---
+This work investigates the color robustness of HDR lighting estimation methods. We systematically evaluate several adaptation strategies and find that preprocessing the input image with a pre-trained white balance network significantly improves color accuracy across multiple state-of-the-art models without requiring any retraining.
