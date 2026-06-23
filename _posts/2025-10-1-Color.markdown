@@ -11,4 +11,4 @@ arxiv: https://arxiv.org/abs/2509.18390
 website: https://lvsn.github.io/coloraccuracy/
 dataset: https://hdrdb-public.s3.valeria.science/color_accuracy/realwb_dataset_cropped.zip
 ---
-This work investigates the color robustness of HDR lighting estimation methods. We systematically evaluate several adaptation strategies and find that preprocessing the input image with a pre-trained white balance network significantly improves color accuracy across multiple state-of-the-art models without requiring any retraining.
+We propose a white-balanced HDR environment map dataset to evaluate the color robustness of lighting estimation models. We demonstrate that preprocessing inputs with a pre-trained white balance network significantly improves color accuracy without requiring retraining.

@@ -13,4 +13,4 @@ code: https://github.com/lvsn/SpotLight
 dataset: https://github.com/lvsn/SpotLight
 supp: https://lvsn.github.io/spotlight/supp
 ---
-SpotLight allows precise local lighting control by specifying the desired shadows of the inserted object. This approach accurately reshades the object and properly harmonizes the object with the target background, without any additional training.
+SpotLight enables object relighting by using shadow guidance to control lighting conditions without requiring additional training. Builds upon our previous work ZeroComp.

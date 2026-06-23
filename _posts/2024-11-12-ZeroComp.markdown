@@ -14,4 +14,4 @@ code: https://github.com/lvsn/ZeroComp
 supp: https://lvsn.github.io/ZeroComp/supp
 poster: https://lvsn.github.io/ZeroComp/assets/poster.pdf
 ---
-Zero-shot 3D object compositing approach that does not require paired composite-scene images during training and can be easily extended to 2D object compositing and material editing.
+Zero-shot 3D object compositing without paired training data. Easily extendable to 2D compositing and material editing.
