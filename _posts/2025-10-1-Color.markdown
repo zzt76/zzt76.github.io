@@ -6,7 +6,7 @@ image: images/color.png
 categories: research
 author: "Zitian Zhang"
 authors: "<strong>Zitian Zhang</strong>, Joshua Urban Davis, Jeanne Phuong Anh Vu, Jiangtao Kuang, Jean-François Lalonde"
-venue: "CIC33 (Oral)"
+venue: "CIC 33 (Oral)"
 arxiv: https://arxiv.org/abs/2509.18390
 website: https://lvsn.github.io/coloraccuracy/
 dataset: https://hdrdb-public.s3.valeria.science/color_accuracy/realwb_dataset_cropped.zip

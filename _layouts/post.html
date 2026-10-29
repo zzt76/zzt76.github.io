@@ -1,3 +1,12 @@
 ---
 layout: default
 ---
+<article class="post-page section">
+  <a class="back-link" href="{{ '/#research' | relative_url }}">← Back to all work</a>
+  <p class="eyebrow">{{ page.venue | default: 'Project' }}</p>
+  <h1>{{ page.title }}</h1>
+  <p class="authors">{% include authors.html authors=page.authors %}</p>
+  {% include project-links.html project=page %}
+  {% if page.image %}<img class="post-image" src="{{ page.image | relative_url }}" alt="Overview of {{ page.title | escape }}">{% endif %}
+  <div class="post-content">{{ content }}</div>
+</article>

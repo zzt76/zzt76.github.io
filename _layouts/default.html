@@ -1,369 +1,64 @@
-<!DOCTYPE HTML>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en"{% unless site.enable_dark_mode %} data-theme="light"{% endunless %}>
 <head>
-  <!-- Google tag (gtag.js) -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="{% if site.enable_dark_mode %}light dark{% else %}light{% endif %}">
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}Zitian Zhang</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <meta name="author" content="Zitian Zhang">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  {% if site.enable_dark_mode %}
+  <script>
+    // Apply a saved preference before paint. System mode stays automatic.
+    try {
+      var preference = localStorage.getItem('site-theme');
+      if (preference === 'light' || preference === 'dark') document.documentElement.dataset.theme = preference;
+    } catch (error) { /* System colors also work without browser storage. */ }
+  </script>
+  {% endif %}
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <script defer src="{{ '/assets/site.js' | relative_url }}"></script>
+  {% if jekyll.environment == 'production' %}
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5MHP9GKZ4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-X5MHP9GKZ4');
   </script>
-
-  <title>{{ site.name }}</title>
-
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-
-  <meta name="author" content="{{ site.name }}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-    type="text/css">
-
+  {% endif %}
 </head>
-
 <body>
-  <table
-    style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table
-          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:60%;vertical-align:middle">
-              <h1>
-                Zitian Zhang, 张梓添
-              </h1>
-              <p>
-                I am a PhD candidate in computer science at Université Laval. I feel very fortunate to have the
-                opportunity
-                to work with <a href="https://vision.gel.ulaval.ca/~jflalonde/">Prof. Jean-François Lalonde</a> and <a
-                  href="https://vision.gel.ulaval.ca/~jflalonde/students/">this amazing lab</a>! My research focuses on
-                understanding, representing, and manipulating lighting with generative models.
-              </p>
-              <p>
-                I was an intern research scientist at Adobe Research London in the summer of 2025, working on lighting
-                representations and image relighting with
-                <a href="https://valentin.deschaintre.fr/">Valentin Deschaintre</a>,
-                <a href="https://iliyan.com/">Iliyan Georgiev</a>,
-                <a href="https://mfischer-ucl.github.io/">Michael Fischer</a>,
-                and <a href="https://yannickhold.com/">Yannick Hold-Geoffroy</a>. I'm currently interning at Adobe again, focusing on editability and controllability of this lighting latent space.
-              </p>
-              <p>
-                Before joining Université Laval, I completed my MEng in Computer Technologies at South China
-                University of Technology with Prof. Chuhua Xian, focusing on consistent depth estimation and BRDF
-                estimation. During this period, I had the pleasure to intern as an Unreal Engine developer to
-                develop my own mini-game at Alibaba Lingxi Interactive. I also worked as a rendering developer intern at
-                Revobit, a start-up focusing on cloud rendering for the fashion industry. I got my BMgnt in E-Commerce
-                from Xidian University.
-              </p>
-              <p style="text-align:center">
-                <a href="pdfs/ZitianZhang_CV.pdf">CV</a> &nbsp;/&nbsp;
-                <a href="mailto:zitian.zhang.1@ulaval.ca">Email</a> &nbsp;/&nbsp;
-                <a href="https://github.com/zzt76" target="_blank">GitHub</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com/citations?user=4RMwQmsAAAAJ" target="_blank">Google Scholar</a>
-                &nbsp;/&nbsp;
-                <a href="https://www.linkedin.com/in/ztzhang76" target="_blank">LinkedIn</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:20%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/zzt.jpg">
-            </td>
-          </tr>
-        </table>
-
-        <p style="text-align:center; font-weight:bold; color:darkred;">
-          I expect to graduate in early/mid 2027 and am looking for full-time positions. Feel free to reach out!
-        </p>
-
-        <p>
-          <center>
-            <figure style="display:inline-block;margin:0;">
-              <img style="width:70%;vertical-align:middle;" alt="hidden_bunny" src="images/hidden_bunny.png">
-              <figcaption style="text-align:center;font-size:small;margin-top:5px;color:#666;">Put and relight the
-                bunny under the chair</figcaption>
-            </figure>
-          </center>
-        </p>
-
-        <table
-          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Research</h2> <img style="width:3%;vertical-align:top;" alt="bunny" src="images/bunny.png">
-              <!-- <p>
-                My research concentrates on high-quality object insertion, lighting understanding, and estimation,
-                leveraging diffusion
-                models to achieve seamless, realistic object compositing across diverse scenes.
-              </p> -->
-            </td>
-          </tr>
-        </table>
-        <table
-          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'research' %}
-          <tr>
-            <td style="padding:2.5%;width:35%;vertical-align:middle;min-width:200px">
-              <img src="{{post.image}}" alt="project image"
-                style="width:auto; height:auto; max-width:100%; cursor:zoom-in;" class="zoomable"
-                onclick="openLightbox(this.src)" />
-            </td>
-            <td style="padding:2.5%;width:65%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              {{post.authors}}
-
-              <br>
-              <!-- <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }} -->
-              <em><strong>{{post.venue}}</strong></em>
-              <br>
-              {% if post.arxiv %}
-              <a href="{{post.arxiv}}" target="_blank">arxiv</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}" target="_blank">paper</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}" target="_blank">code</a> /
-              {% endif %}
-              {% if post.dataset %}
-              <a href="{{post.dataset}}" target="_blank">dataset</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}" target="_blank">slides</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}" target="_blank">poster</a> /
-              {% endif %}
-              {% if post.website %}
-              <a href="{{post.website}}" target="_blank">website</a> /
-              {% endif %}
-              {% if post.supp %}
-              <a href="{{post.supp}}" target="_blank">supplementary</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}" target="_blank">video</a> /
-              {% endif %}
-              {% if post.youtube %}
-              <a href="{{post.youtube}}" target="_blank">youtube</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-
-        <!-- <br>
-        <br>
-        <br>
-
-        <table
-          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Intel Projects</h2>
-              <p>Besides my work on the RealSense depth sensors and the publications above, a sampling of my publicly
-                disclosed work
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table
-          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'Intel' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-
-        !-->
-
-        <br>
-        <br>
-        <br>
-
-        <table
-          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Other Projects</h2>
-              <p> These include intern projects, and other projects that I have worked on.
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table
-          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat != 'research' and cat != 'Intel' %}
-          <tr>
-            <td style="padding:2.5%;width:35%;vertical-align:middle;min-width:120px">
-              {% if post.video %}
-              <video width="100%" controls>
-                <source src={{post.video}} type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              {% else %}
-              <img src="{{post.image}}" alt="project image"
-                style="width:auto; height:auto; max-width:100%; cursor:zoom-in;" class="zoomable"
-                onclick="openLightbox(this.src)" />
-              {% endif %}
-            </td>
-            <td style="padding:2.5%;width:65%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <br>
-              {{ post.date | date: "%Y-%m-%d" }}
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> /
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> /
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> /
-              {% endif %}
-              <!-- {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> /
-              {% endif %} -->
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-
-        <table
-          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:center;font-size:small;">
-                Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's
-                  website</a> and <a slot="source" style="font-size:small;" href="https://leonidk.com/">Leonid
-                  Keselman's website</a>.
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-
-  <!-- Lightbox Modal -->
-  <div id="lightbox" onclick="closeLightbox()"
-    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; cursor:zoom-out; justify-content:center; align-items:center;">
-    <img id="lightbox-img" src="" alt="Zoomed image"
-      style="max-width:90%; max-height:90%; object-fit:contain; border-radius:4px; box-shadow:0 0 20px rgba(0,0,0,0.5);" />
-    <span
-      style="position:absolute; top:20px; right:30px; color:white; font-size:40px; font-weight:bold; cursor:pointer;">&times;</span>
-  </div>
-
-  <script>
-    function openLightbox(src) {
-      var lightbox = document.getElementById('lightbox');
-      var img = document.getElementById('lightbox-img');
-      img.src = src;
-      lightbox.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      var lightbox = document.getElementById('lightbox');
-      lightbox.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-
-    // Close on Escape key
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        closeLightbox();
-      }
-    });
-  </script>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="wordmark" href="{{ '/' | relative_url }}">Zitian Zhang<span class="wordmark-dot" aria-hidden="true">.</span></a>
+      <div class="nav-links">
+        <a href="{{ '/#about' | relative_url }}">About</a>
+        <a href="{{ '/#research' | relative_url }}">Research</a>
+        <a href="{{ '/pdfs/ZitianZhang_CV.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span></a>
+      </div>
+      {% if site.enable_dark_mode %}
+      <label class="theme-control" hidden>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        <span class="sr-only">Color theme</span>
+        <select id="theme-select" aria-label="Color theme"><option value="system">Auto</option><option value="light">Light</option><option value="dark">Dark</option></select>
+      </label>
+      {% endif %}
+    </nav>
+  </header>
+  <main id="main" class="shell">{{ content }}</main>
+  <footer class="site-footer shell">
+    <div><a class="footer-name" href="{{ '/' | relative_url }}">Zitian Zhang</a><span>Lighting, vision &amp; generative models.</span></div>
+    <p>Built with Jekyll. Originally based on <a href="https://jonbarron.info/" target="_blank" rel="noopener noreferrer">Jon Barron's website</a> and <a href="https://leonidk.com/" target="_blank" rel="noopener noreferrer">Leonid Keselman's website</a>.</p>
+    <a class="back-top" href="#main">Back to top <span aria-hidden="true">↑</span></a>
+  </footer>
+  <dialog class="lightbox" aria-label="Enlarged project image">
+    <button class="lightbox-close" type="button" aria-label="Close image">Close <span aria-hidden="true">×</span></button>
+    <img class="lightbox-image" alt="">
+    <p class="lightbox-caption"></p>
+  </dialog>
 </body>
-
 </html>

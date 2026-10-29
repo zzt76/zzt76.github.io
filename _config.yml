@@ -6,10 +6,13 @@
 name: Zitian Zhang, 张梓添
 
 # Short bio or description (displayed in the header)
-# description: the profile of an engineer, researcher and software developer
+description: "Zitian Zhang is a PhD candidate at Université Laval, researching lighting representations, image relighting, and object compositing with generative models."
+
+# Keep the site light-only until theme-specific research figures are ready.
+enable_dark_mode: false
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: images/zzt_rect.jpg
+avatar: images/zzt.jpg
 
 #
 # Flags below are optional
@@ -55,7 +58,7 @@ url: "https://zzt76.github.io" # the base hostname & protocol for your site
 #
 
 #permalink: /:title/
-permalink: /
+permalink: /projects/:title/
 
 
 # The release of Jekyll Now that you're using
@@ -82,11 +85,16 @@ plugins:
 
 # Exclude these files from your production _site
 exclude:
+  - vendor
+  - scripts
+  - temp
+  - dev.ps1
+  - preview.cmd
+  - .jekyll-cache
   - Gemfile
   - Gemfile.lock
   - LICENSE
   - README.md
-  - CNAME
   - command.txt
   - todo.txt
   - _temp/index.html

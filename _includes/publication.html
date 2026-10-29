@@ -1,0 +1,26 @@
+{% assign project = include.post %}
+<article class="publication">
+  <div class="publication-media">
+    {% if include.other and project.video %}
+    <video controls preload="none" aria-label="{{ project.title | escape }} gameplay">
+      <source src="{{ project.video | relative_url }}" type="video/mp4">
+      <a href="{{ project.video | relative_url }}">Download gameplay video</a>
+    </video>
+    {% else %}
+    <button class="image-zoom" type="button" data-lightbox aria-label="Enlarge figure: {{ project.title | escape }}">
+      <img src="{{ project.image | relative_url }}" alt="Overview of {{ project.title | escape }}" loading="lazy" decoding="async">
+    </button>
+    {% endif %}
+  </div>
+  <div class="publication-copy">
+    {% if project.venue %}
+    <p class="venue">{{ project.venue }}</p>
+    {% else %}
+    <p class="project-meta">{{ project.date | date: '%Y' }}{% if project.project_type %} · {{ project.project_type | escape }}{% endif %}</p>
+    {% endif %}
+    <h3><a href="{% if project.website %}{{ project.website }}{% elsif project.paper %}{{ project.paper }}{% elsif project.arxiv %}{{ project.arxiv }}{% else %}{{ project.url | relative_url }}{% endif %}">{{ project.title }}</a></h3>
+    <div class="authors">{% include authors.html authors=project.authors %}</div>
+    {% include project-links.html project=project %}
+    <div class="project-description">{{ project.excerpt }}</div>
+  </div>
+</article>

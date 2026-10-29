@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<section id="about" class="hero" aria-labelledby="intro-title">
+  <div class="hero-copy">
+    <p class="eyebrow">Computer vision · Computer graphics</p>
+    <h1 id="intro-title"><span class="person-name">Zitian Zhang</span> <span lang="zh" class="chinese-name">张梓添</span></h1>
+    <p class="role"><span>PhD candidate at Université Laval</span><span class="role-location">Québec City, Canada</span></p>
+    <div class="social-links" aria-label="Contact and profiles">
+      <a class="button primary" href="mailto:zitian.zhang.1@ulaval.ca">Email <span aria-hidden="true">↗</span></a>
+      <a href="{{ '/pdfs/ZitianZhang_CV.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span></a>
+      <a href="https://scholar.google.com/citations?user=4RMwQmsAAAAJ">Scholar <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/zzt76">GitHub <span aria-hidden="true">↗</span></a>
+      <a href="https://www.linkedin.com/in/ztzhang76">LinkedIn <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <figure class="portrait">
+    <img src="{{ '/images/zzt.jpg' | relative_url }}" alt="Zitian Zhang" width="816" height="1024" fetchpriority="high">
+  </figure>
+  <div class="biography">
+      <p>I am a PhD candidate in computer science at Université Laval, advised by <a class="person-name" href="https://vision.gel.ulaval.ca/~jflalonde/" target="_blank" rel="noopener noreferrer">Prof. Jean-François Lalonde</a> in the <a href="https://vision.gel.ulaval.ca/~jflalonde/students/" target="_blank" rel="noopener noreferrer">Computer Vision &amp; Systems Lab</a>. My research focuses on understanding, representing, and manipulating lighting with generative models.</p>
+      <p>I interned at Adobe Research in London in 2025 and 2026, working on lighting representations and image relighting with <a class="person-name" href="https://valentin.deschaintre.fr/" target="_blank" rel="noopener noreferrer">Valentin Deschaintre</a>, <a class="person-name" href="https://iliyan.com/" target="_blank" rel="noopener noreferrer">Iliyan Georgiev</a>, <a class="person-name" href="https://mfischer-ucl.github.io/" target="_blank" rel="noopener noreferrer">Michael Fischer</a>, <a class="person-name" href="https://yannickhold.com/" target="_blank" rel="noopener noreferrer">Yannick Hold-Geoffroy</a>, <a class="person-name" href="https://samsartor.com/" target="_blank" rel="noopener noreferrer">Sam Sartor</a>, and <a class="person-name" href="https://zhixinshu.github.io/" target="_blank" rel="noopener noreferrer">Zhixin Shu</a>. My follow-up work explores the editability and controllability of lighting representations.</p>
+      <p>Previously, I completed my MEng in Computer Technologies at South China University of Technology with <span class="person-name">Prof. Chuhua Xian</span>, studying consistent depth estimation and BRDF estimation. I also interned as an Unreal Engine developer at Alibaba Lingxi Interactive and as a rendering developer at Revobit, a cloud rendering start-up for the fashion industry. I received my bachelor's degree in E-Commerce from Xidian University.</p>
+  </div>
+</section>
+<aside class="availability" aria-label="Career availability">
+  <span class="status-dot" aria-hidden="true"></span>
+  <p>I expect to graduate in early/mid 2027 and am looking for full-time research positions.</p>
+  <a href="{{ '/pdfs/ZitianZhang_CV.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">View my CV <span aria-hidden="true">↗</span></a>
+</aside>
+<section id="research" class="section" aria-labelledby="research-title">
+  <div class="section-heading"><h2 id="research-title">Research</h2></div>
+  <div class="publication-list">
+    {% for post in site.posts %}{% if post.categories contains 'research' %}
+      {% include publication.html post=post %}
+    {% endif %}{% endfor %}
+  </div>
+</section>
+<section id="projects" class="section" aria-labelledby="projects-title">
+  <div class="section-heading"><h2 id="projects-title">Other projects</h2></div>
+  {% for post in site.posts %}{% unless post.categories contains 'research' or post.categories contains 'Intel' %}
+    {% include publication.html post=post other=true %}
+  {% endunless %}{% endfor %}
+</section>
