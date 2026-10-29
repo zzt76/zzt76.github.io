@@ -8,6 +8,10 @@ author: "Zitian Zhang"
 authors: "<strong>Zitian Zhang</strong>, Iliyan Georgiev, Michael Fischer, Yannick Hold-Geoffroy, Jean-François Lalonde, Valentin Deschaintre"
 venue: "CVPR 2026 (highlight)"
 arxiv: https://arxiv.org/abs/2512.04267v1
-website: https://lvsn.github.io/UniLight/
+code: https://github.com/lvsn/UniLight
+website: https://lvsn.github.io/UniLight
+supp: https://hdrdb-public.s3.valeria.science/UniLight/UniLight-supp.zip
+poster: https://lvsn.github.io/UniLight/assets/poster.pdf
+
 ---
 A joint latent space that unifies multiple lighting representations (environment maps, irradiance, spherical harmonics, text) for cross-modal retrieval, generation, and lighting control.
